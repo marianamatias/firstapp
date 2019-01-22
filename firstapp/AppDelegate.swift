@@ -12,9 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var mainVC:MainViewController?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        mainVC = MainViewController(nibName: "MainViewController", bundle:nil)
+        
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        
+        window!.rootViewController = mainVC
+        window!.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }
