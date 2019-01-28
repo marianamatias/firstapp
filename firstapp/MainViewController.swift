@@ -103,6 +103,20 @@ class MainViewController: UIViewController
             {
                 timer!.invalidate()
                 timer = nil
+                
+                let alertController = UIAlertController(title: "Time Up!", message: "Your time is up! You got a score of: \(score) points. Very good!", preferredStyle: .alert)
+                
+                let restartAction = UIAlertAction(title: "Restart", style: .default, handler: nil)
+                alertController.addAction(restartAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                score = 0
+                seconds = 60
+                
+                updateTimeLabel()
+                updateScoreLabel()
+                setRandomNumberLabel()
             }
         }
     }
