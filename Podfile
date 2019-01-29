@@ -18,5 +18,7 @@ target 'firstapp' do
   end
 
 pod 'Firebase/Core'
+pod 'Firebase/Database'
+
 
 end
