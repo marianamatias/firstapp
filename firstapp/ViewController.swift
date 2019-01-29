@@ -18,8 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let ref=Database.database().reference()
-        ref.setValue("Player1")
-
+        ref.child("player/player1/name").observeSingleEvent(of: .value) { (snapshot) in
+            let name = snapshot.value as? String
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
