@@ -10,20 +10,18 @@ import UIKit
 import Firebase
 
 
-
-
 class ViewController: UIViewController {
     var ref:DatabaseReference!
-
+    //   var ref:DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ref=Database.database().reference()
-        ref.child("player/player1/name").observeSingleEvent(of: .value) { (snapshot) in
-            let name = snapshot.value as? String
-        }
-        // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
+        self.ref.child("Name").childByAutoId().setValue("Hello")
     }
-
-
+    
+    
+        // Do any additional setup after loading the view, typically from a nib.
 }
+
+
 
